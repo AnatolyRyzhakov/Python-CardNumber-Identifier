@@ -8,15 +8,19 @@
         <br><h3>How to use:</h3>
         <br>To identify your Bank: 
         <ol start="1">
-            <li>Insert card <a href="/" title=
+            <li>Insert card 
+<a href="/" title=
 "A bank identification number (BIN), 
 also called an issuer identification number (IIN), 
 is a set of four to six digits found in financial payment cards, 
-i.e., credit, debit, and charge cards">BIN</a> number into the field</li>
+i.e., credit, debit, and charge cards">
+            BIN</a> number into the field</li>
             <li>Click the IDENTIFY button</li>
             <li>Wait for response</li>
         </ol>
-        <input type="number" min="0">
-        <input type="button" name="identify" value="IDENTIFY">
+        <form method="GET", action="/identify">
+            <input type="number" id="BIN" name="BIN" min="0" placeholder="Enter BIN"><br><br>
+            <input type="submit" value="IDENTIFY">
+        </form>
     </body>
 </html>
