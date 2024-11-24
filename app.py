@@ -1,11 +1,20 @@
 from flask import Flask
-from core.db_manager import load_bin_data_from_source, DATABASE_SOURCE
+from core.db_manager import DBManager as DBM
+
+# SRS-1
+# EN: The program loads a BIN number database from a CSV file on the disk at startup
+# RU: При запуске программа считывает из csv-файла на диске базу данных BIN-номеров
+db_source = DBM.DATABASE_SOURCE
+db: DBM = DBM(db_source)
+db.load_bin_data_from_source()
 
 app: Flask = Flask(__name__)
-bin_data = load_bin_data_from_source(DATABASE_SOURCE)
 
 from routes.routes import *
 
 if __name__ == ("__main__"):
-    if bin_data:
-        app.run(debug=True)
+    # SRS-2
+    # EN: After successful loading, the application becomes an HTTP server
+    # RU: После успешной загрузки приложение «превращается» в HTTP-сервер
+    if db.bin_data:
+        app.run(debug=False)

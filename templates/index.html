@@ -18,9 +18,15 @@ i.e., credit, debit, and charge cards">
             <li>Click the IDENTIFY button</li>
             <li>Wait for response</li>
         </ol>
+        <!-- SRS-4 -->
+        <!-- EN: A web page with a minimal user interface: a field for entering a bank card number and a submit button -->
+        <!-- RU: Web-страница c минимальным пользовательским интерфейсом: полем для ввода номера банковской карты и кнопкой отправки запроса -->
         <form method="GET", action="/identify">
             <input type="number" id="BIN" name="BIN" min="0" placeholder="Enter BIN"><br><br>
             <input type="submit" value="IDENTIFY">
+        <!-- SRS-5 -->
+        <!-- EN: Clicking the button sends a request to the server -->
+        <!-- RU: Нажатие на кнопку приводит к отправке запроса на сервер -->
         </form>
     </body>
 </html>
