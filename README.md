@@ -26,7 +26,7 @@ EN: **Local Run**
 After successful launch:
     - The console should display a corresponding message.
     - The web page should be accessible in your browser at ```http://127.0.0.1:5000```
-- To run the tests, use the command ```pytest -s .\tests```
+- To run the tests, use the command ```pytest -v .\tests```
 
 RU: **Лоальный запуск**
 
@@ -39,7 +39,7 @@ RU: **Лоальный запуск**
 В случае успешного запуска:
     - В консоли должна отобразиться соответствующая информация
     - В браузере должна быть доступна веб-страница, по адресу ```http://127.0.0.1:5000```
-- Запуск тестов осуществляется с помощью команды ```pytest -s .\tests```
+- Запуск тестов осуществляется с помощью команды ```pytest -v .\tests```
 
 EN: **Docker (optional)**
 
@@ -54,11 +54,13 @@ RU: **Docker (optional)**
 2. Запустить собранный Docker контейнер командой ```docker run -p 5000:5000 cardnumber-identifier```
 В случае успешного запуска:
     - В браузере должна быть доступна веб-страница, по адресу ```http://127.0.0.1:5000```
+- Запуск тестов осуществляется с помощью команды ```docker exec -it <CONTAINER ID> .venv/bin/pytest -s tests/```, где ```<CONTAINER ID>``` это ID запущенного контейнера (проверить можно командой ```docker ps```)
 
 ### TO DO List
 
-Ideas to upgrade service
+Ideas to upgrade/polishing service
 
+- [ ] Install Chromewebdriver in Dockerfile (to fix UI tests)
 - [ ] Add logger and save output to a .log file
 - [ ] Add server caching for requests
 - [ ] Add more OOP
